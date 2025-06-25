@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital 3D Menu</title>
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      animation: waveTrees 10s infinite alternate ease-in-out;
+    }@keyframes waveTrees {
+  0% { background-position-y: 0px; }
+  100% { background-position-y: 10px; }
+}
+
+#rollOn {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #00f0ff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#menu {
+  display: none;
+  margin-top: 100px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  animation: pop 1.5s ease-in-out forwards;
+  padding-bottom: 40px;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.section {
+  display: block;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 90vw;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px #00f0ff, 0 0 40px #00f0ff;
+  animation: slideDown 1.2s ease forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 22px;
+  text-shadow: 0 0 20px #ffffff, 0 0 30px #00f0ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 8px 0;
+  color: #fff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+@media (min-width: 768px) {
+  #menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .section {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    width: 220px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <button id="rollOn">Roll On</button>  <div id="menu">
+    <div class="section">
+      <h2>Appetizers</h2>
+      <ul>
+        <li>Spring Rolls</li>
+        <li>Garlic Bread</li>
+        <li>Bruschetta</li>
+        <li>Stuffed Mushrooms</li>
+        <li>Cheese Balls</li>
+        <li>Paneer Tikka</li>
+        <li>Chicken Wings</li>
+        <li>Nachos</li>
+        <li>Mini Samosas</li>
+        <li>Hummus with Pita</li>
+      </ul>
+    </div><div class="section">
+  <h2>Beverages</h2>
+  <ul>
+    <li>Fresh Lime Soda</li>
+    <li>Mojito</li>
+    <li>Cold Coffee</li>
+    <li>Iced Tea</li>
+    <li>Lassi</li>
+    <li>Milkshake</li>
+    <li>Fruit Punch</li>
+    <li>Coconut Water</li>
+    <li>Hot Chocolate</li>
+    <li>Espresso</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Desserts</h2>
+  <ul>
+    <li>Chocolate Cake</li>
+    <li>Gulab Jamun</li>
+    <li>Ice Cream</li>
+    <li>Brownie</li>
+    <li>Fruit Tart</li>
+    <li>Cheesecake</li>
+    <li>Mousse</li>
+    <li>Truffle</li>
+    <li>Kulfi</li>
+    <li>Tiramisu</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Main Course</h2>
+  <ul>
+    <li>Paneer Butter Masala</li>
+    <li>Chicken Curry</li>
+    <li>Veg Biryani</li>
+    <li>Dal Makhani</li>
+    <li>Butter Naan</li>
+    <li>Fried Rice</li>
+    <li>Manchurian</li>
+    <li>Fish Curry</li>
+    <li>Mixed Veg</li>
+    <li>Chole Bhature</li>
+  </ul>
+</div>
+
+  </div><audio id="calmMusic" src="https://www.bensound.com/bensound-music/bensound-tomorrow.mp3"></audio>
+
+  <script>
+    const button = document.getElementById('rollOn');
+    const menu = document.getElementById('menu');
+    const music = document.getElementById('calmMusic');
+
+    button.addEventListener('click', () => {
+      menu.style.display = 'block';
+      music.play();
+    });
+  </script></body>
+</html>
